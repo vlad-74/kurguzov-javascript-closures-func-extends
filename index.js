@@ -28,8 +28,20 @@ emitter.emit('test1', {name:'Люся'})
 
 fetch('https://jsonplaceholder.typicode.com/todos/1')
   .then(response => response.json())
-  .then(log)
+  .then(log) // вызов без скобок работает !
+  // аналог .then(json => console.log(json))
+function log(data){ console.log(data) }
 
-function log(data){
-  console.log(data)
+
+const data =[ {name: 'aaa', width: 111},{name: 'bbb', width: 222} ]
+const arr = new Array(data.length)
+  .fill('')
+  .map(width(data))
+
+function width(data) {
+  // передаем/возвращаем аналог array.map( function( currentValue, index, arr )
+  return (col, index) =>{
+    return JSON.stringify({ name: data[index].name, index, width: data[index].width })
+  }
 }
+console.log(arr)
