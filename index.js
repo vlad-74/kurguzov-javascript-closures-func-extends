@@ -24,3 +24,12 @@ component2.$.listen('test1', (args)=>{console.log('from Component2', args)})
 component2.$.emit('test1', {name:'Masha'})
 
 emitter.emit('test1', {name:'Люся'})
+
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(log)
+
+function log(data){
+  console.log(data)
+}
