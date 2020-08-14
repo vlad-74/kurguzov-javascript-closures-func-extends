@@ -27,7 +27,7 @@ emitter.emit('test1', {name:'Люся'})
 
 
 // НАВОДИМ КРАСОТУ :)
-const data =[ {name: 'aaa', width: 111},{name: 'bbb', width: 222} ]
+const data =[ {name: 'aaa', age: 11},{name: 'bbb', age: 22} ]
 const arr = new Array(data.length)
   .fill('')
   .map(createArr(data))
@@ -35,7 +35,7 @@ const arr = new Array(data.length)
 function createArr(data) {
   // передаем/возвращаем аналог array.map( function( currentValue, index, arr )
   return (col, index) =>{
-    return JSON.stringify({ name: data[index].name, index, width: data[index].width })
+    return JSON.stringify({ name: data[index].name, index, age: data[index].age })
   }
 }
 console.log(arr)
