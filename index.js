@@ -26,6 +26,7 @@ component2.$.emit('test1', {name:'Masha'})
 emitter.emit('test1', {name:'Люся'})
 
 
+// НАВОДИМ КРАСОТУ :)
 const data =[ {name: 'aaa', width: 111},{name: 'bbb', width: 222} ]
 const arr = new Array(data.length)
   .fill('')
@@ -38,6 +39,7 @@ function width(data) {
   }
 }
 console.log(arr)
+
 
 fetch('https://jsonplaceholder.typicode.com/todos/1')
   .then(response => response.json())
