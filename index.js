@@ -8,7 +8,7 @@ emitter.listen('test1', (args)=>{console.log('from Emitter',args)})
 emitter.emit('test1', {name:'Vladimir'})
 
 function Component(){
-  this.$ = Emitter.call(this)
+  this.$ = Emitter.call(this) // наследуем Emitter в компонент
   this.html = ''
 }
 // Component.prototype = Object.create(Emitter.prototype)
